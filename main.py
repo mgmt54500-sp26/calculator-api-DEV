@@ -26,7 +26,7 @@ def add(a: str, b: str):
         b = float(b)
     except ValueError:
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Both 'a' and 'b' must be valid numbers")
-    return {"result": a + b}
+    return {"version": "DEV", "result": a + b}
 
 @app.get("/subtract/{a}/{b}", status_code=200)
 def subtract(a: str, b: str):
@@ -45,4 +45,4 @@ def subtract(a: str, b: str):
         b = float(b)
     except ValueError:
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Both 'a' and 'b' must be valid numbers")
-    return {"result": a - b}
+    return {"version": "DEV", "result": a - b}
